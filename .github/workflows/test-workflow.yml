@@ -1,0 +1,30 @@
+name: 'Terraform'
+
+on: 
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+
+
+jobs:
+  terraform-dev-plan:
+    name: 'Terraform Plan - Dev'
+
+    runs-on: ubuntu-latest
+    
+    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
+    defaults:
+      run:
+        shell: bash
+ 
+    steps:
+    
+      id: get-aget-ip
+      shell: bash
+      run: |
+        echo "{agent_ip}=$(curl https://api.ipify.org)" >> $GITHUB_OUTPUT
+
+      name: Output IP
+      run: |
+        echo "Whitelisted ${{ steps.get-aget-ip.outputs.agent_ip }} on storage account devopsintegrations"

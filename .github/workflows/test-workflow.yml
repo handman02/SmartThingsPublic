@@ -27,4 +27,4 @@ jobs:
 
       - name: Output IP
         runs: |
-        echo "Whitelisted ${{ steps.get-aget-ip.outputs.agent_ip }} on storage account devopsintegrations"
+          echo "Whitelisted ${{ steps.get-aget-ip.outputs.agent_ip }} on storage account devopsintegrations"

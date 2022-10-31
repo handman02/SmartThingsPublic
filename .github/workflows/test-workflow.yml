@@ -19,12 +19,12 @@ jobs:
         shell: bash
  
     steps:
-    
-      id: get-aget-ip
-      shell: bash
-      runs: |
-        echo "{agent_ip}=$(curl https://api.ipify.org)" >> $GITHUB_OUTPUT
+      - name:   
+        id: get-aget-ip
+        shell: bash
+        runs: |
+          echo "{agent_ip}=$(curl https://api.ipify.org)" >> $GITHUB_OUTPUT
 
-      name: Output IP
-      runs: |
+      - name: Output IP
+        runs: |
         echo "Whitelisted ${{ steps.get-aget-ip.outputs.agent_ip }} on storage account devopsintegrations"

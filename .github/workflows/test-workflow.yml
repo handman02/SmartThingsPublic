@@ -19,13 +19,13 @@ jobs:
         shell: bash
  
     steps:
-      - name:   
+      - name: Get IP
         id: get-aget-ip
         shell: bash
         run: |
           IP=$(curl "https://api.ipify.org")
           echo $IP
-          echo "{agent_ip}=$IP" >> $GITHUB_OUTPUT
+          echo "{agent_ip}=$(IP)" >> $GITHUB_OUTPUT
 
       - name: Output IP
         run: |

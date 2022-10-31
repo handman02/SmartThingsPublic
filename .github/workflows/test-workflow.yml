@@ -25,8 +25,8 @@ jobs:
         run: |
           IP=$(curl "https://api.ipify.org")
           echo $IP
-          #echo "{agent_ip}=$(echo $IP)" >> $GITHUB_OUTPUT
-          echo "agent_ip=testing" >> $GITHUB_OUTPUT
+          echo "agent_ip=$(echo $IP)" >> $GITHUB_OUTPUT
+          
 
       - name: Output IP
         run: |

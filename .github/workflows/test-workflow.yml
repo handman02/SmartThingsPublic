@@ -11,12 +11,12 @@ jobs:
   terraform-dev-plan:
     name: 'Terraform Plan - Dev'
     strategy:
+      max-parallel: 1
       matrix: 
         test-env: ["dev", "prod"]
 
     runs-on: ubuntu-latest
     environment: ${{ matrix.test-env }}
-    max-parallel: 1
     
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:

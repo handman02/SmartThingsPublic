@@ -13,7 +13,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix: 
-        test-env: ["dev", "prod"]
+        test-env: ["prod", "dev"]
 
     runs-on: ubuntu-latest
     environment: ${{ matrix.test-env }}
